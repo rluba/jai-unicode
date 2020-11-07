@@ -46,7 +46,7 @@ is_valid_utf8 :: (str: string) -> valid:bool {
 				i += 2;
 			} else {	// 4-byte sequence
 				if i + 3 >= str.count || !is_utf_cont(str[i+1]) || !is_utf_cont(str[i+2]) || !is_utf_cont(str[i+3]) return false;
-				// Make sure in correct range (0x10000 - 0x10ffff)
+				// Make sure its in valid range (0x10000 - 0x10ffff)
 				if cur == 0xf0 && str[i + 1] < 0x90 return false;
 				if cur == 0xf4 && str[i + 1] > 0x8f return false;
 				i += 3;
