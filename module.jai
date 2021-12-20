@@ -1,5 +1,3 @@
-#import "Basic";
-
 is_utf_cont :: inline (b: u8) -> bool {
 	return (b & 0xc0) == 0x80;
 }
@@ -56,3 +54,6 @@ is_valid_utf8 :: (str: string) -> valid:bool {
 	return true;
 }
 
+#scope_file
+
+#import "Basic";
